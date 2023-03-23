@@ -1,3 +1,4 @@
+import { Comment } from '../Comment/Comment'
 import styles from './Post.module.scss'
 
 type PostProps = {
@@ -43,7 +44,11 @@ export function Post({ author, content }: PostProps) {
         </footer>
       </form>
 
-
+      <div className={styles.commentList}>
+        <Comment />
+        <Comment />
+        <Comment />
+      </div>
     </article>
   )
 }
