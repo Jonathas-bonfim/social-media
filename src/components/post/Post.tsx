@@ -27,7 +27,9 @@ export function Post({ author, content }: PostProps) {
         <p>Desenvolvi a aplicação social media, é um feed de rede social com vários posts, irei deixar o link do repositório com mais informações</p>
         <p><a href="#">https://github.com/Jonathas-bonfim/social-media</a></p>
         <p>
-          <a href="">#dev #frontend #github</a>
+          <a href="">#dev</a>{' '}
+          <a href="">#frontend</a>{' '}
+          <a href="">#github</a>{' '}
         </p>
       </div>
 
