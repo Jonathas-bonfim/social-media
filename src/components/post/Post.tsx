@@ -1,3 +1,4 @@
+import { Avatar } from '../Avatar/Avatar'
 import { Comment } from '../Comment/Comment'
 import styles from './Post.module.scss'
 
@@ -11,9 +12,8 @@ export function Post({ author, content }: PostProps) {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img
-            className={styles.avatar}
-            src="https://github.com/jonathas-bonfim.png" alt="Avatar"
+          <Avatar
+            src="https://github.com/jonathas-bonfim.png"
           />
           <div className={styles.authorInfo}>
             <strong>Jônathas Bonfim</strong>
