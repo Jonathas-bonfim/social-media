@@ -2,12 +2,33 @@ import { Avatar } from '../Avatar/Avatar'
 import { Comment } from '../Comment/Comment'
 import styles from './Post.module.scss'
 
-type PostProps = {
-  author: string,
+type AuthorProps = {
+  avatarUrl: string,
+  name: string,
+  role: string
+}
+
+type ContentProps = {
+  type: string,
   content: string
 }
 
-export function Post({ author, content }: PostProps) {
+type PostProps = {
+  author: AuthorProps,
+  content: {
+    type: string,
+    content: string
+  }[]
+  PublishAt: Date
+}
+
+export function Post({ author, content, PublishAt }: PostProps) {
+  const publishedDateFormatted = new Intl.DateTimeFormat('pb-BR', {
+    day: '2-digit',
+    month: 'long',
+    timeStyle: 'full'
+  })
+
   return (
     <article className={styles.post}>
       <header>
@@ -16,11 +37,11 @@ export function Post({ author, content }: PostProps) {
             src="https://github.com/jonathas-bonfim.png"
           />
           <div className={styles.authorInfo}>
-            <strong>Jônathas Bonfim</strong>
-            <span>Web Developer</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
-        <time title="23 de Março às 8:15h" dateTime='2023-03-23 08:00:00'>Publicado a 30 minutos</time>
+        <time title="23 de Março às 8:15h" dateTime='2023-03-23 08:00:00'>Há 2 horas atrás</time>
       </header>
 
       <div className={styles.content}>
